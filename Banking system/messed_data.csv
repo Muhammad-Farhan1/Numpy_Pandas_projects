@@ -1,0 +1,16 @@
+Name,Age,Experience,Salary,Department,Rating,City
+John Smith,NaN,8,75000,Retail Banking,4.2,New York
+Sarah Johnson,42,,115000,Investment Banking,3.8,Chicago
+Michael Brown,,12,92000,Operations,4.1,Houston
+Emily Davis,28,3,inf,Retail Banking,3.5,Los Angeles
+Robert Wilson,51,20,145000,HR,4.9,Chicago
+Jennifer Lee,37,9,88000,HR,inf,Boston
+David Miller,45,15,,Risk Management,4.3,New York
+Lisa Taylor,31,5,68000,Retail Banking,3.2,Los Angeles
+James Anderson,,,72000,IT,3.9,Seattle
+Patricia Moore,48,inf,132000,Investment Banking,4.5,Houston
+Daniel Harris,39,10,inf,Operations,,Dallas
+Michelle Clark,29,4,65000,Retail Banking,3.7,San Francisco
+Thomas Lewis,56,25,158000,Investment Banking,4.8,New York
+Nancy Walker,33,6,,IT,3.4,Chicago
+Charles Young,41,11,94000,Operations,inf,Boston
