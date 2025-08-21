@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("E-commerce Dataset\Pakistan Largest Ecommerce Dataset.csv" , low_memory=False)
+df = pd.read_csv("Pakistan Largest Ecommerce Dataset.csv" , low_memory=False)
 
 # Displaying first 5 rows
 #print(df.head())
@@ -79,7 +79,6 @@ plt.xlabel("Category")
 plt.ylabel("Total Revenue")
 plt.xticks(rotation=90)
 plt.tight_layout()
-plt.show()
 
 #5.Top 10 Products → Use sku to find best-selling products by revenue & quantity.
 #---by Revenue
@@ -96,4 +95,13 @@ Best_Selling_Quantity = df.groupby('sku')['item_id'].count().sort_values(ascendi
 Monthly_Growth = df.groupby('Monthly_Sales')['item_id'].nunique()
 #print(Monthly_Growth)
 
-#7.New vs Returning Customers → Compare using Customer Since.
+
+#7. New vs Returning Customers
+df['Working Date'] = pd.to_datetime(df['Working Date'])
+df['Customer Since'] = pd.to_datetime(df['Customer Since'])
+
+df['Customer_Type'] = (df['Working Date'].dt.to_period('M') == df['Customer Since'].dt.to_period('M'))
+df['Customer_Type'] = df['Customer_Type'].map({True : "New" , False : "Returning"})
+df['Month'] = df['Working Date'].dt.to_period('M')
+New_vs_return = df.groupby(['Month', 'Customer_Type'])['item_id'].nunique().unstack().fillna(0)
+print(New_vs_return)
